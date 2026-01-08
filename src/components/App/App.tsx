@@ -15,7 +15,7 @@ export default function App() {
     });
 
     const totalVotes = votes.good + votes.neutral + votes.bad;
-    const positivePercentage = totalVotes
+    const positiveRate = totalVotes
         ? Math.round((votes.good / totalVotes) * 100)
         : 0;
     const handleVote = (type: VoteType) => {
@@ -41,7 +41,7 @@ export default function App() {
                 <VoteStats
                     votes={votes}
                     totalVotes={totalVotes}
-                    positivePercentage={positivePercentage}
+                    positivePercentage={positiveRate}
                 />
             ) : (
                 <Notification />
