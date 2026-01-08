@@ -1,7 +1,7 @@
 import css from "./App.module.css";
 import { useState } from "react";
 
-import type { Votes } from "../../types/votes";
+import type { Votes, VoteType } from "../../types/votes";
 
 import CafeInfo from "../CafeInfo/CafeInfo";
 import VoteOptions from "../VoteOptions/VoteOptions";
@@ -14,8 +14,8 @@ export default function App() {
         bad: 0,
     });
 
-    let totalVotes = votes.good + votes.neutral + votes.bad;
-    let positivePercentage = totalVotes
+    const totalVotes = votes.good + votes.neutral + votes.bad;
+    const positivePercentage = totalVotes
         ? Math.round((votes.good / totalVotes) * 100)
         : 0;
     const handleVote = (type: VoteType) => {
