@@ -1,14 +1,6 @@
 import css from "./VoteStats.module.css";
 
-interface VoteStatsProps {
-    votes: {
-        good: number;
-        neutral: number;
-        bad: number;
-    };
-    totalVotes: number;
-    positiveRate: number;
-}
+import type { VoteStatsProps } from "../../types/votes";
 
 export default function VoteStats({
     votes,
